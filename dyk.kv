@@ -14,7 +14,7 @@
         MDLabel:
             id:fact_here
             halign:"center"
-            font_style:"Body1"
+            
     MDBoxLayout:
         size_hint:(1,.08)  
         spacing:10
@@ -24,7 +24,19 @@
         MDCard:
             radius:10
             elevation:10
-            on_release:app.toggle()
+            MDIconButton:
+                id:toggle_b
+                icon:"youtube"
+                on_release:root.open_youtube_channel()
+            MDIconButton:
+                id:about
+                icon:"theme-light-dark"
+                on_release:app.toggle()
+            MDIconButton:
+                id:twitter
+                icon:"twitter"
+                on_release:root.open_twitter_account()
+               
         MDFillRoundFlatButton:
             text:"next"
             on_release:root.next()
