@@ -1,0 +1,31 @@
+<Main>:
+    orientation:"vertical"
+    padding:20
+    spacing:10
+    MDCard:
+        padding:10
+        elevation:20
+        radius:10
+        orientation:"vertical"
+        MDLabel:
+            text:"Do you \nknow"
+            halign:"center"
+            font_style:"H2"
+        MDLabel:
+            id:fact_here
+            halign:"center"
+            font_style:"Body1"
+    MDBoxLayout:
+        size_hint:(1,.08)  
+        spacing:10
+        MDFillRoundFlatButton:
+            text:"prev"
+            on_release:root.prev()
+        MDCard:
+            radius:10
+            elevation:10
+            on_release:app.toggle()
+        MDFillRoundFlatButton:
+            text:"next"
+            on_release:root.next()
+
