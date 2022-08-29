@@ -8,9 +8,10 @@
         font_style:"H2"
         size_hint:(1,.4)
         font_name:"quatum"
+        pos_hint:{'center_y':.5}
     MDCard:
         elevation:6
-        radius:60
+        radius:100
         padding:30
         orientation:"vertical"   
         size_hint_x:.89
@@ -19,41 +20,55 @@
             id:fact_here
             halign:"center"
             font_style:"H5"
+            pos_hint:{'center_y':.5}
             font_name:"quatum"
-            
     MDBoxLayout:
-        size_hint:(1,.2)  
-        spacing:15
+        size_hint_x:.89
+        pos_hint:{"center_x":.5} 
+        size_hint_y:None
+        height:button.height
         MDFillRoundFlatButton:
+            id:button
             text:"prev"
             on_release:root.prev()
             font_style:"Button"
-        MDCard:
-            radius:10
-            elevation:10
-            size_hint:(1,.57)
-            MDIconButton:
-                id:toggle_b
-                icon:"youtube"
-                on_release:root.open_youtube_channel()
-            MDSeparator:
-            MDIconButton:
-                id:about
-                icon:"theme-light-dark"
-                on_release:app.toggle()
-            MDSeparator
-            MDIconButton:
-                id:twitter
-                icon:"twitter"
-                on_release:root.open_twitter_account()
-            MDSeparator
-            MDIconButton:
-                id:copy
-                icon:"content-copy"
-                on_release:root.copy()
-                       
+
+        
+        Splitter:         
         MDFillRoundFlatButton:
             text:"next"
             font_style:"Button"
             on_release:root.next()
+    MDBoxLayout:
+        size_hint:(1,.24)  
+        spacing:15
+        
+        MDCard:
+            radius:50
+            elevation:10
+            
+            
+            MDIconButton:
+                id:toggle_b
+                icon:"youtube"
+                on_release:root.open_youtube_channel()
+                pos_hint:{'center_y':.5}
+            Splitter:
+            MDIconButton:
+                id:about
+                icon:"theme-light-dark"
+                on_release:app.toggle()
+                pos_hint:{'center_y':.5}
+            Splitter:
+            MDIconButton:
+                id:twitter
+                icon:"twitter"
+                on_release:root.open_twitter_account()
+                pos_hint:{'center_y':.5}
+            Splitter:
+            MDIconButton:
+                id:copy
+                icon:"content-copy"
+                on_release:root.copy()
+                pos_hint:{'center_y':.5}
 
